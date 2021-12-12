@@ -87,13 +87,13 @@ namespace _13
             //Проверка поля на корректность введенных данных
             if (Int32.TryParse(kolStrok.Text, out int row) && Int32.TryParse(kolStolbcov.Text, out int column) && row > 0 && column > 0)
             {
+                v.Text = $"Matrix: {kolStrok.Text}" + "*" + $"{kolStolbcov.Text}";
                 Class1.Заполнить(row, column, out matr);
 
                 //Выводим матрицу на форму
                 matrData.ItemsSource = VisualArray.ToDataTable(matr).DefaultView;
 
                 //очищаем результат
-               
               Rez.Clear();
             }
             else MessageBox.Show("Вы не создали матрицу, укажите размеры матрицы и нажмите кнопку Заполнить", "Ошибка", MessageBoxButton.OK,
@@ -185,11 +185,15 @@ namespace _13
         private void kolStrok_TextChanged(object sender, TextChangedEventArgs e)
         {
             Rez.Clear();
+
         }
 
         private void kolStolbcov_TextChanged(object sender, TextChangedEventArgs e)
         {
             Rez.Clear();
         }
+
+       
+
     }
 }
