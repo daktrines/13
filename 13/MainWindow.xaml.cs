@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,11 +33,11 @@ namespace _13
 
         private void Инфо_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("\nКалион Екатерина " +
+            MessageBox.Show("Калион Екатерина " +
                 "\n13 пр" +
                 "\nДана матрица размера M * N. " +
                 "\nНайти количество ее столбцов, элементы которых " +
-                "\nупорядочены по убыванию", Name, MessageBoxButton.OK, MessageBoxImage.Information);
+                "\nупорядочены по убыванию", "Информация", MessageBoxButton.OK, MessageBoxImage.Question);
         }
         private void Выход_Click(object sender, RoutedEventArgs e)
         {
@@ -87,7 +88,9 @@ namespace _13
             //Проверка поля на корректность введенных данных
             if (Int32.TryParse(kolStrok.Text, out int row) && Int32.TryParse(kolStolbcov.Text, out int column) && row > 0 && column > 0)
             {
+                //Определяем размер матрицы
                 v.Text = $"Matrix: {kolStrok.Text}" + "*" + $"{kolStolbcov.Text}";
+               
                 Class1.Заполнить(row, column, out matr);
 
                 //Выводим матрицу на форму
@@ -143,6 +146,7 @@ namespace _13
             }
 
         }
+
         //Очищение матрицы
         private void Сброс_Click(object sender, RoutedEventArgs e)
         {
@@ -161,6 +165,7 @@ namespace _13
             else MessageBox.Show("Вы не создали матрицу, укажите размеры матрицы и нажмите кнопку \"Заполнить" , "Ошибка",  MessageBoxButton.OK,
                     MessageBoxImage.Error);
         }
+
         //Сохранение матрицы
         private void Savematr_Click(object sender, RoutedEventArgs e)
         {
@@ -182,18 +187,27 @@ namespace _13
             }
         }
 
+        //Когда изменяем текстбокс, очищает остальные текстбоксы
         private void kolStrok_TextChanged(object sender, TextChangedEventArgs e)
         {
             Rez.Clear();
 
         }
 
+        //Когда изменяем текстбокс, очищает остальные текстбоксы
         private void kolStolbcov_TextChanged(object sender, TextChangedEventArgs e)
         {
             Rez.Clear();
         }
-
        
-
+        //Определяем номер ячейки в матрице
+        private void matrData_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            //Определяем номер столбца
+            int indexColumn = matrData.CurrentCell.Column.DisplayIndex;
+            //Определяем номер строки
+            int indexRow = matrData.SelectedIndex;
+            s.Text = $"Строка {indexRow + 1}" + " / " + $"Столбец {indexColumn + 1}";
+        }
     }
 }

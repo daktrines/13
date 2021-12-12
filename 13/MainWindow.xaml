@@ -58,6 +58,29 @@
             </MenuItem>
             <MenuItem Header="О программе" Click="Инфо_Click" />
         </Menu>
+        <ToolBar Height="35" Grid.Row="1" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+            <Button  ToolTip="Открыть таблицу" Click="Openmatr_Click" Width="50">
+                <Image Source="image/icons8-открыть-папку-96.png"/>
+            </Button>
+            <Separator></Separator>
+            <Button  ToolTip="Сохранить таблицу" Click="Savematr_Click" Width="50">
+                <Image Source="image/icons8-сохранить-все-96.png" Width="27"/>
+            </Button>
+            <Separator></Separator>
+            <Button  ToolTip="Сброс" Click="Сброс_Click" Width="50">
+                <Image Source="image/icons8-перезапуск-32.png"  />
+            </Button>
+            <Separator></Separator>
+            <Button  ToolTip="Закрыть программу" Click="Выход_Click" Width="50">
+                <Image Source="image/icons8-кнопка-с-крестиком-96.png" />
+            </Button>
+        </ToolBar>
+        <GroupBox Header="Исходные данные" Grid.Row="2" Margin="0,0,0,151" Grid.RowSpan="2">
+            <Grid>
+                <DataGrid x:Name="matrData" CellEditEnding="МатрицаDataGrid_CellEditEnding" CanUserAddRows="False"  Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" MouseDoubleClick="matrData_MouseDoubleClick"/>
+            </Grid>
+        </GroupBox>
+        
         <GroupBox  Header="Настройка матрицы" Margin="10,0,0,3" HorizontalAlignment="Left" Width="245" Height="131" VerticalAlignment="Bottom" Grid.Row="3">
             <Grid>
                 <TextBox x:Name="kolStrok" Text="" MaxLines="1" Margin="10,10,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="67" TextChanged="kolStrok_TextChanged" />
@@ -89,28 +112,6 @@
             <Separator></Separator>
             <TextBlock x:Name="date" TextWrapping="Wrap" VerticalAlignment="Top"  Width="153" TextAlignment="Center" />
         </StatusBar>
-        <ToolBar Height="35" Grid.Row="1" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
-            <Button  ToolTip="Открыть таблицу" Click="Openmatr_Click" Width="50">
-                <Image Source="image/icons8-открыть-папку-96.png"/>
-            </Button>
-            <Separator></Separator>
-            <Button  ToolTip="Сохранить таблицу" Click="Savematr_Click" Width="50">
-                <Image Source="image/icons8-сохранить-все-96.png" Width="27"/>
-            </Button>
-            <Separator></Separator>
-            <Button  ToolTip="Сброс" Click="Сброс_Click" Width="50">
-                <Image Source="image/icons8-перезапуск-32.png"  />
-            </Button>
-            <Separator></Separator>
-            <Button  ToolTip="Закрыть программу" Click="Выход_Click" Width="50">
-                <Image Source="image/icons8-кнопка-с-крестиком-96.png" />
-            </Button>
-        </ToolBar>
-        <GroupBox Header="Исходные данные" Grid.Row="2" Margin="0,0,0,151" Grid.RowSpan="2">
-            <Grid>
-                <DataGrid x:Name="matrData" CellEditEnding="МатрицаDataGrid_CellEditEnding" CanUserAddRows="False"  Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}"/>
-            </Grid>
-        </GroupBox>
         <Grid.ContextMenu>
             <ContextMenu>
                 <MenuItem  Header="Заполнить" Click="Заполнить_Click" >
