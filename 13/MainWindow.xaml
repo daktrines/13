@@ -106,9 +106,9 @@
         <StatusBar  Grid.Row="4" Margin="0,2,1,0" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" >
             <TextBlock x:Name="v" Height="23" TextWrapping="Wrap"  Width="120" Background="#FF99B4D1" TextAlignment="Center" />
             <Separator Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"></Separator>
-            <TextBlock x:Name="s" Height="23" TextWrapping="Wrap"  Width="117" Background="#FF99B4D1" TextAlignment="Center" />
+            <TextBlock x:Name="s" Height="23" TextWrapping="Wrap"  Width="173" Background="#FF99B4D1" TextAlignment="Center" />
             <Separator Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"></Separator>
-            <TextBlock x:Name="time" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" TextAlignment="Center" />
+            <TextBlock x:Name="time" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" TextAlignment="Center" />
             <Separator Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"></Separator>
             <TextBlock x:Name="date" TextWrapping="Wrap" VerticalAlignment="Top"  Width="153" TextAlignment="Center" />
         </StatusBar>
