@@ -65,7 +65,7 @@ namespace _13
         private void МатрицаDataGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
         {
             //Очищаем textbox с результатом 
-            Rez.Clear();
+            Rez1.Clear();
 
             //Определяем номер столбца
             int columnIndex = e.Column.DisplayIndex;
@@ -95,7 +95,7 @@ namespace _13
                 matrData.ItemsSource = VisualArray.ToDataTable(matr).DefaultView;
 
                 //очищаем результат
-              Rez.Clear();
+              Rez1.Clear();
             }
             else MessageBox.Show("Вы не создали матрицу, укажите размеры матрицы и нажмите кнопку Заполнить", "Ошибка", MessageBoxButton.OK,
                     MessageBoxImage.Error);
@@ -104,7 +104,7 @@ namespace _13
         //Расчет задания для матрицы
         private void Вычислить_Click(object sender, RoutedEventArgs e)
         {
-             Rez.Clear();
+             Rez1.Clear();
 
             if (matr == null || matr.Length == 0)
             {
@@ -115,22 +115,8 @@ namespace _13
             {
                 int row = Convert.ToInt32(kolStrok.Text);
                 int column = Convert.ToInt32(kolStolbcov.Text);
-                int kol = 0;
-                bool p;
-                for (int j = 0; j < column; j++)
-                {
-                    p = true;
-                    for (int i = 0; i < row  - 1; i++)
-                    {
-                        if (matr[i, j] <= matr[i + 1, j])
-                        {
-                            p = false;
-                            break;
-                        }
-                    }
-                    if (p) kol++;//p = true тоже самое
-                }
-                Rez.Text = Convert.ToString(kol);
+                int kol = Rez.Рассчитать(row, column, matr);
+                Rez1.Text = Convert.ToString(kol);
             }
         }
 
@@ -141,7 +127,7 @@ namespace _13
             kolStrok.Focus();
             kolStolbcov.Clear();
             kolStrok.Clear();
-            Rez.Clear();
+            Rez1.Clear();
 
             if (matr != null && matr.Length != 0)
             {
@@ -176,13 +162,13 @@ namespace _13
         //Когда изменяем текстбокс, очищает остальные текстбоксы
         private void kolStrok_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Rez.Clear();
+            Rez1.Clear();
         }
 
         //Когда изменяем текстбокс, очищает остальные текстбоксы
         private void kolStolbcov_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Rez.Clear();
+            Rez1.Clear();
         }
        
         //Определяем номер ячейки в матрице

@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="libmas\Class1.cs" />
+    <Compile Include="Rez.cs" />
     <Compile Include="VisualArray.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
