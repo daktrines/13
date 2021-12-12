@@ -10,9 +10,7 @@ namespace LibMas
 {
     public class Class1
     {
-        
-       
-        
+     
         //Заполнение матрицы
         public static void Заполнить( int row, int column, out int[,] matr)
         {
@@ -31,7 +29,6 @@ namespace LibMas
             }
         }
 
-
         //Очищение матрицы
         public static void Сброс(int[,] matr)
         {
@@ -43,9 +40,7 @@ namespace LibMas
                     matr[i, j] = 0;
                 }
             }
-
         }
-
 
         //Сохранение матрицы
         public static void Savematr(int[,] matr)
@@ -79,7 +74,6 @@ namespace LibMas
                 file.Close();
             }
         }
-
 
         //Открытие матрицы
         public static void Openmatr(out int[,] matr)
@@ -116,7 +110,6 @@ namespace LibMas
                 }
                 file.Close();
             }
-
         }
     }
 }

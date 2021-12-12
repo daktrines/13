@@ -65,7 +65,6 @@ namespace _13
         private void МатрицаDataGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
         {
             //Очищаем textbox с результатом 
-
             Rez.Clear();
 
             //Определяем номер столбца
@@ -84,7 +83,6 @@ namespace _13
         //Заполнение матрицы
         private void Заполнить_Click(object sender, RoutedEventArgs e)
         {
-
             //Проверка поля на корректность введенных данных
             if (Int32.TryParse(kolStrok.Text, out int row) && Int32.TryParse(kolStolbcov.Text, out int column) && row > 0 && column > 0)
             {
@@ -101,13 +99,11 @@ namespace _13
             }
             else MessageBox.Show("Вы не создали матрицу, укажите размеры матрицы и нажмите кнопку Заполнить", "Ошибка", MessageBoxButton.OK,
                     MessageBoxImage.Error);
-
-
         }
+
         //Расчет задания для матрицы
         private void Вычислить_Click(object sender, RoutedEventArgs e)
         {
-           
              Rez.Clear();
 
             if (matr == null || matr.Length == 0)
@@ -117,34 +113,25 @@ namespace _13
             }
             else
             {
-                //Проверка поля на корректность введенных данных
-                if (Int32.TryParse(kolStrok.Text, out int row) && Int32.TryParse(kolStolbcov.Text, out int column) && row > 0 && column > 0)
+                int row = Convert.ToInt32(kolStrok.Text);
+                int column = Convert.ToInt32(kolStolbcov.Text);
+                int kol = 0;
+                bool p;
+                for (int j = 0; j < column; j++)
                 {
-                    
-                   
-                    int kol = 0;
-                    bool p;
-                    for (int j = 0; j < column; j++)
+                    p = true;
+                    for (int i = 0; i < row  - 1; i++)
                     {
-                        p = true;
-                        for (int i = 0; i < row  - 1; i++)
+                        if (matr[i, j] <= matr[i + 1, j])
                         {
-
-                            if (matr[i, j] <= matr[i + 1, j])
-                            {
-                                p = false;
-                                break;
-                            }
+                            p = false;
+                            break;
                         }
-                        if (p) kol++;//p = true тоже самое
                     }
-                    Rez.Text = Convert.ToString(kol);
+                    if (p) kol++;//p = true тоже самое
                 }
-                else MessageBox.Show("Неверные данные!", "Ошибка", MessageBoxButton.OK,
-                   MessageBoxImage.Error);
-
+                Rez.Text = Convert.ToString(kol);
             }
-
         }
 
         //Очищение матрицы
@@ -175,7 +162,6 @@ namespace _13
         //Открытие матрицы
         private void Openmatr_Click(object sender, RoutedEventArgs e)
         {
-
             Class1.Openmatr(out matr);
             for (int i = 0; i < matr.GetLength(0); i++)
             {
@@ -191,7 +177,6 @@ namespace _13
         private void kolStrok_TextChanged(object sender, TextChangedEventArgs e)
         {
             Rez.Clear();
-
         }
 
         //Когда изменяем текстбокс, очищает остальные текстбоксы
