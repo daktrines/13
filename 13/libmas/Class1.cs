@@ -29,19 +29,6 @@ namespace LibMas
             }
         }
 
-        //Очищение матрицы
-        public static void Сброс(int[,] matr)
-        {
-            //Заполняем матрицу нулями
-            for (int i = 0; i < matr.GetLength(0); i++)
-            {
-                for (int j = 0; j < matr.GetLength(1); j++)
-                {
-                    matr[i, j] = 0;
-                }
-            }
-        }
-
         //Сохранение матрицы
         public static void Savematr(int[,] matr)
         {

@@ -131,9 +131,7 @@ namespace _13
 
             if (matr != null && matr.Length != 0)
             {
-                Class1.Сброс(matr);
-                //Выводим матрицу на форму
-                matrData.ItemsSource = VisualArray.ToDataTable(matr).DefaultView;
+                matrData.ItemsSource = null;
             }
             else MessageBox.Show("Вы не создали матрицу, укажите размеры матрицы и нажмите кнопку \"Заполнить" , "Ошибка",  MessageBoxButton.OK,
                     MessageBoxImage.Error);
