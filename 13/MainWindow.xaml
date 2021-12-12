@@ -7,12 +7,15 @@
         mc:Ignorable="d"
         Title="13" Height="450" Width="590" Loaded="Windows_Loaded" WindowStartupLocation="CenterScreen" Icon="icons8-информатика-96.png" Background="#FFB0A3A3" MinWidth="599" MinHeight="450">
     <Grid>
-         
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition  Height="213"/>
             <RowDefinition/>
+            <RowDefinition Height="157"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Menu VerticalAlignment="Top"  Grid.Row="0" Margin="-1,0,1,0" Height="18" Background="#FFB0A3A3" >
@@ -54,7 +57,7 @@
             </MenuItem>
             <MenuItem Header="О программе" Click="Инфо_Click" />
         </Menu>
-        <GroupBox  Header="Настройка матрицы" Margin="10,0,0,3" HorizontalAlignment="Left" Width="245" Height="131" VerticalAlignment="Bottom" Grid.Row="2" Grid.RowSpan="2">
+        <GroupBox  Header="Настройка матрицы" Margin="10,0,0,3" HorizontalAlignment="Left" Width="245" Height="131" VerticalAlignment="Bottom" Grid.Row="3">
             <Grid>
                 <TextBox x:Name="kolStrok" Text="" MaxLines="1" Margin="10,10,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="67" TextChanged="kolStrok_TextChanged" />
                 <Label Content="- Количество строк" Margin="82,10,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="147"></Label>
@@ -63,13 +66,13 @@
                 <Button Content="Заполнить" Click="Заполнить_Click" ToolTip="Создать и заполнить матрицу" Margin="10,72,10,0" Height="27" VerticalAlignment="Top" Background="#FFB0A3A3" />
             </Grid>
         </GroupBox>
-        <GroupBox  Header="Результат" Margin="260,0,0,3" Height="131" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="157" Grid.Row="2" Grid.RowSpan="2">
+        <GroupBox  Header="Результат" Margin="260,0,0,3" Height="131" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="158" Grid.Row="3">
             <Grid>
                 <Button Content="Вычислить" Click="Вычислить_Click" HorizontalAlignment="Left" Width="125" Height="26" VerticalAlignment="Top" Margin="10,56,0,0" Background="#FFB0A3A3"></Button>
                 <TextBox Name="Rez" ToolTip="Количество столбцов, которые соответствуют условию" IsReadOnly="True" Margin="10,25,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="125"/>
             </Grid>
         </GroupBox>
-        <GroupBox Header="Информация" HorizontalAlignment="Left" Height="131" VerticalAlignment="Bottom" Width="150"  Grid.Row="2" Margin="422,0,0,3" Grid.RowSpan="2">
+        <GroupBox Header="Информация" HorizontalAlignment="Left" Height="131" VerticalAlignment="Bottom" Width="150"  Grid.Row="3" Margin="422,0,0,3">
             <Grid>
                 <Button Content="Сброс" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="118" Height="26" Click="Сброс_Click" Background="#FFB0A3A3"/>
                 <Button Content="О программе" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="118" Height="26" Click="Инфо_Click" Background="#FFB0A3A3"/>
@@ -100,7 +103,7 @@
                 <Image Source="image/icons8-кнопка-с-крестиком-96.png" />
             </Button>
         </ToolBar>
-        <GroupBox Header="Исходные данные" Grid.Row="2" Margin="0,0,0,22">
+        <GroupBox Header="Исходные данные" Grid.Row="2" Margin="0,0,0,151" Grid.RowSpan="2">
             <Grid>
                 <DataGrid x:Name="matrData" CellEditEnding="МатрицаDataGrid_CellEditEnding" CanUserAddRows="False"  Background="#FFB0A3A3"/>
             </Grid>
