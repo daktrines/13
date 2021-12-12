@@ -62,15 +62,15 @@
             <Button  ToolTip="Открыть таблицу" Click="Openmatr_Click" Width="50">
                 <Image Source="image/icons8-открыть-папку-96.png"/>
             </Button>
-            <Separator></Separator>
+            <Separator Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"> </Separator>
             <Button  ToolTip="Сохранить таблицу" Click="Savematr_Click" Width="50">
                 <Image Source="image/icons8-сохранить-все-96.png" Width="27"/>
             </Button>
-            <Separator></Separator>
+            <Separator Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"></Separator>
             <Button  ToolTip="Сброс" Click="Сброс_Click" Width="50">
                 <Image Source="image/icons8-перезапуск-32.png"  />
             </Button>
-            <Separator></Separator>
+            <Separator Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"></Separator>
             <Button  ToolTip="Закрыть программу" Click="Выход_Click" Width="50">
                 <Image Source="image/icons8-кнопка-с-крестиком-96.png" />
             </Button>
@@ -105,11 +105,11 @@
         </GroupBox>
         <StatusBar  Grid.Row="4" Margin="0,2,1,0" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" >
             <TextBlock x:Name="v" Height="23" TextWrapping="Wrap"  Width="120" Background="#FF99B4D1" TextAlignment="Center" />
-            <Separator></Separator>
+            <Separator Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"></Separator>
             <TextBlock x:Name="s" Height="23" TextWrapping="Wrap"  Width="117" Background="#FF99B4D1" TextAlignment="Center" />
-            <Separator></Separator>
+            <Separator Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"></Separator>
             <TextBlock x:Name="time" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" TextAlignment="Center" />
-            <Separator></Separator>
+            <Separator Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"></Separator>
             <TextBlock x:Name="date" TextWrapping="Wrap" VerticalAlignment="Top"  Width="153" TextAlignment="Center" />
         </StatusBar>
         <Grid.ContextMenu>
