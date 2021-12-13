@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:_13"
         mc:Ignorable="d"
         Title="13" Height="450" Width="590" Loaded="Windows_Loaded" WindowStartupLocation="CenterScreen" Icon="icons8-информатика-96.png" MinWidth="599" MinHeight="450" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Foreground="Black">
-   
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -17,7 +17,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="157"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" MinHeight="31"/>
         </Grid.RowDefinitions>
         <Menu VerticalAlignment="Top"  Grid.Row="0" Margin="-1,0,1,0" Height="18" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Foreground="Black" >
             <MenuItem Header="Файл">
@@ -62,7 +62,7 @@
             <Button  ToolTip="Открыть таблицу" Click="Openmatr_Click" Width="50">
                 <Image Source="image/icons8-открыть-папку-96.png"/>
             </Button>
-            <Separator Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"> </Separator>
+            <Separator Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"></Separator>
             <Button  ToolTip="Сохранить таблицу" Click="Savematr_Click" Width="50">
                 <Image Source="image/icons8-сохранить-все-96.png" Width="27"/>
             </Button>
@@ -80,38 +80,39 @@
                 <DataGrid x:Name="matrData" CellEditEnding="МатрицаDataGrid_CellEditEnding" CanUserAddRows="False"  Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" MouseDoubleClick="matrData_MouseDoubleClick"/>
             </Grid>
         </GroupBox>
-        
+
         <GroupBox  Header="Настройка матрицы" Margin="10,0,0,3" HorizontalAlignment="Left" Width="245" Height="131" VerticalAlignment="Bottom" Grid.Row="3">
             <Grid>
                 <TextBox x:Name="kolStrok" Text="" MaxLines="1" Margin="10,10,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="67" TextChanged="kolStrok_TextChanged" MaxLength="2" />
                 <Label Content="- Количество строк" Margin="82,10,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="147" Foreground="Black"></Label>
                 <TextBox  x:Name="kolStolbcov" Text="" MaxLines="1" Margin="10,41,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="67" TextChanged="kolStolbcov_TextChanged" MaxLength="2" />
                 <Label Content="- Количество столбцов" Margin="82,41,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="147" Foreground="Black"></Label>
-                <Button Content="Заполнить" Click="Заполнить_Click" ToolTip="Создать и заполнить матрицу" Margin="10,72,10,0" Height="27" VerticalAlignment="Top" Background="#FF4265A2" Foreground="White" />
+                <Button Content="Заполнить" Click="Заполнить_Click" ToolTip="Создать и заполнить матрицу" Margin="10,72,10,0" Height="27" VerticalAlignment="Top" Background="#FF4265A2" Foreground="White" BorderBrush="{DynamicResource {x:Static SystemColors.InactiveCaptionTextBrushKey}}" />
             </Grid>
         </GroupBox>
         <GroupBox  Header="Результат" Margin="260,0,0,3" Height="131" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="158" Grid.Row="3">
             <Grid>
-                <Button Content="Вычислить" ToolTip="Вычислить матрицу" Click="Вычислить_Click" HorizontalAlignment="Left" Width="125" Height="26" VerticalAlignment="Top" Margin="10,56,0,0" Background="#FF4265A2" Foreground="White"></Button>
+                <Button Content="Вычислить" ToolTip="Вычислить матрицу" Click="Вычислить_Click" HorizontalAlignment="Left" Width="125" Height="26" VerticalAlignment="Top" Margin="10,56,0,0" Background="#FF4265A2" Foreground="White" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"></Button>
                 <TextBox Name="Rez1" ToolTip="Количество столбцов, которые соответствуют условию" IsReadOnly="True" Margin="10,25,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="125"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="Информация" HorizontalAlignment="Left" Height="131" VerticalAlignment="Bottom" Width="150"  Grid.Row="3" Margin="422,0,0,3">
             <Grid>
-                <Button Content="Сброс" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="118" Height="26" Click="Сброс_Click" Background="#FF4265A2" Foreground="White"/>
-                <Button Content="О программе" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="118" Height="26" Click="Инфо_Click" Background="#FF4265A2" Foreground="White"/>
-                <Button Content="Выход" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="118" Height="26" Click="Выход_Click" Background="#FF4265A2" Foreground="White"/>
+                <Button Content="Сброс " ToolTip="Сброс"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="118" Height="26" Click="Сброс_Click" Background="#FF4265A2" Foreground="White" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"/>
+                <Button Content="О программе" ToolTip="Информация о программе"  HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="118" Height="26" Click="Инфо_Click" Background="#FF4265A2" Foreground="White" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"/>
+                <Button Content="Выход" ToolTip="Выход из программы"  HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="118" Height="26" Click="Выход_Click" Background="#FF4265A2" Foreground="White" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"/>
             </Grid>
         </GroupBox>
         <StatusBar  Grid.Row="4" Margin="0,2,1,0" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" >
-            <TextBlock x:Name="v" Height="23" TextWrapping="Wrap"  Width="120" Background="#FF99B4D1" TextAlignment="Center" />
+            <TextBlock x:Name="v" ToolTip="Размер таблицы"  Height="18" TextWrapping="Wrap"  Width="120" Background="#FF99B4D1" TextAlignment="Center" />
             <Separator Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"></Separator>
-            <TextBlock x:Name="s" Height="23" TextWrapping="Wrap"  Width="173" Background="#FF99B4D1" TextAlignment="Center" />
+            <TextBlock x:Name="s" ToolTip="Номер строки и номер столбца, выделенной ячейки"  Height="17" TextWrapping="Wrap"  Width="173" Background="#FF99B4D1" TextAlignment="Center" />
             <Separator Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"></Separator>
-            <TextBlock x:Name="time" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" TextAlignment="Center" />
+            <TextBlock x:Name="time" ToolTip="Время"  TextWrapping="Wrap" VerticalAlignment="Top" Width="95" TextAlignment="Center" Height="18" />
             <Separator Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"></Separator>
-            <TextBlock x:Name="date" TextWrapping="Wrap" VerticalAlignment="Top"  Width="153" TextAlignment="Center" />
+            <TextBlock x:Name="date" ToolTip="Дата"  TextWrapping="Wrap" VerticalAlignment="Top"  Width="153" TextAlignment="Center" Height="18" />
         </StatusBar>
+        <Separator HorizontalAlignment="Left" Height="40" Margin="-2,138,0,0" Grid.Row="3" VerticalAlignment="Top" Width="592" Grid.RowSpan="2" Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}"/>
         <Grid.ContextMenu>
             <ContextMenu>
                 <MenuItem  Header="Заполнить" Click="Заполнить_Click" >
